@@ -6,6 +6,9 @@ export default {
     ],
     theme: {
       extend: {
+        maxWidth: {
+          '8xl': '85rem',
+        },
         fontFamily: {
           sans: ["Noto Sans JP", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
           serif: ["Noto Serif JP", "ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"],

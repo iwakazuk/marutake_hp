@@ -54,7 +54,7 @@ export default function Story() {
         <section id="renovation" className="py-24 bg-surface-2 scroll-mt-24">
           <div className="max-w-5xl mx-auto px-6">
             <div className="mb-16">
-              <h2 className="text-5xl font-bold font-serif text-gray-900 mb-6">
+              <h2 className="text-5xl font-bold font-sans text-gray-900 mb-6">
                 改装ストーリー
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
@@ -290,7 +290,7 @@ export default function Story() {
         <section id="logo" className="py-24 bg-surface-2 scroll-mt-24">
           <div className="max-w-5xl mx-auto px-6">
             <div className="mb-16 text-center">
-              <h2 className="text-5xl font-bold font-serif text-gray-900 mb-6">
+              <h2 className="text-5xl font-bold font-sans text-gray-900 mb-6">
                 ロゴの意味
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
@@ -394,7 +394,7 @@ export default function Story() {
         <section id="owner" className="py-24 bg-surface-2 scroll-mt-24">
           <div className="max-w-5xl mx-auto px-6">
             <div className="mb-16 text-center">
-              <h2 className="text-5xl font-bold font-serif text-gray-900 mb-6">
+              <h2 className="text-5xl font-bold font-sans text-gray-900 mb-6">
                 オーナー挨拶
               </h2>
             </div>

@@ -176,7 +176,7 @@ export default function Access() {
       <section className="py-24 bg-surface-1">
         <Container>
           <div className="mb-16">
-            <h2 className="text-5xl font-bold font-serif text-gray-900 mb-4">
+            <h2 className="text-5xl font-bold font-sans text-gray-900 mb-4">
               周辺施設
             </h2>
             <p className="text-gray-600">生活に便利な施設が徒歩圏内</p>
@@ -267,7 +267,7 @@ export default function Access() {
       <section className="py-24 bg-surface-2">
         <Container>
           <div className="mb-16">
-            <h2 className="text-5xl font-bold font-serif text-gray-900 mb-4">
+            <h2 className="text-5xl font-bold font-sans text-gray-900 mb-4">
               エリアの雰囲気
             </h2>
             <p className="text-gray-600">山王・天王寺エリアの魅力</p>

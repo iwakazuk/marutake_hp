@@ -16,7 +16,7 @@ export default function Hero({ image, title, subtitle, heightClass = 'h-[60vh]',
         <div className="absolute inset-0 bg-black/50" />
       </div>
       <div className={`relative z-10 w-full ${align === 'center' ? 'text-center' : ''}`}>
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-8xl mx-auto px-6">
           <h1 className="text-6xl md:text-7xl font-extrabold text-white mb-6 leading-tight">{title}</h1>
           {subtitle ? <p className="text-2xl text-white/95 font-medium">{subtitle}</p> : null}
         </div>

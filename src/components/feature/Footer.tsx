@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-surface-2 text-grey relative overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
+      <div className="max-w-8xl mx-auto px-6 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
@@ -16,7 +16,7 @@ export default function Footer() {
               <span className="text-2xl font-bold font-serif">{SITE.title}</span>
             </div>
 
-            <p className="text-2xl font-serif leading-relaxed">
+            <p className="text-2xl font-sans leading-relaxed">
               遊ぶように生きる<br />
               大人たちの家
             </p>

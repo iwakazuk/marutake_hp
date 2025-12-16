@@ -5,6 +5,8 @@ import type { BlogPost } from '@/types';
 import Hero from '@/components/feature/Hero';
 import SectionHeader from '@/components/feature/SectionHeader';
 import Container from '@/components/ui/Container';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/Tabs';
+import TabsBar from '@/components/ui/TabsBar';
 import { SITE } from '@/config/site';
 import LinkButton from '@/components/ui/LinkButton';
 import CircleIcon from '@/components/ui/CircleIcon';
@@ -31,26 +33,18 @@ export default function Blog() {
         heightClass="h-[60vh]"
       />
 
-      {/* Category Filter */}
-      <section className="py-12 bg-surface-1 border-b border-gray-100">
-        <Container>
-          <div className="flex flex-wrap justify-center gap-3">
+      {/* Category Tabs (TabsBar) */}
+      <TabsBar>
+        <Tabs value={selectedCategory} onChange={(v: string) => setSelectedCategory(v)}>
+          <TabsList>
             {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer ${
-                  selectedCategory === category
-                    ? 'bg-brand text-white shadow-lg'
-                    : 'bg-surface-4 text-gray-700 hover:bg-surface-2'
-                }`}
-              >
+              <TabsTrigger key={category} value={category}>
                 {category}
-              </button>
+              </TabsTrigger>
             ))}
-          </div>
-        </Container>
-      </section>
+          </TabsList>
+        </Tabs>
+      </TabsBar>
 
   {/* Blog Posts Grid */}
       <section className="py-24 bg-surface-2">

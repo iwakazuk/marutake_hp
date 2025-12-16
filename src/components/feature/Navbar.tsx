@@ -32,11 +32,9 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-surface-2/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 'bg-transparent'`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-9xl mx-auto px-16 py-16">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center space-x-2">
               <div
@@ -59,7 +57,7 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`flex items-center gap-2 px-6 py-2.5 text-sm font-medium rounded-full transition-colors whitespace-nowrap cursor-pointer ${
                 isScrolled
-                  ? 'bg-surface-3 text-white hover:bg-surface-3'
+                  ? 'bg-surface-3/10 text-grey border border-surface-3/30 hover:bg-surface-3/20'
                   : 'bg-surface-2/10 backdrop-blur-md border border-surface-2/30 text-white hover:bg-surface-2/20'
               }`}
             >
@@ -87,7 +85,7 @@ export default function Navbar() {
       >
         {/* Close Button */}
         <div className="absolute top-0 left-0 right-0 z-[110]">
-          <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="max-w-8xl mx-auto px-16 py-16">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <div className="w-10 h-10 flex items-center justify-center text-grey">

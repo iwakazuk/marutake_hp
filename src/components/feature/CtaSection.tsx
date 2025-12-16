@@ -18,9 +18,9 @@ export default function CtaSection({ title, subtitle, href = SITE.social.line, b
   return (
     <section className={'py-24 bg-surface-3'}>
       <Container className="text-center">
-        <h2 className={`text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-white`}>{title}</h2>
+        <h2 className={`text-4xl md:text-4xl font-extrabold mb-6 text-white tracking-wider`}>{title}</h2>
         {subtitle ? (
-          <p className={`text-xl mb-12 text-white`}>{subtitle}</p>
+          <p className={`text-base md:text-xl mb-12 text-white`}>{subtitle}</p>
         ) : null}
 
         <LinkButton

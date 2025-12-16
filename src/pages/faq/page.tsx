@@ -8,6 +8,8 @@ import LinkButton from '@/components/ui/LinkButton';
 import CircleIcon from '@/components/ui/CircleIcon';
 import Container from '@/components/ui/Container';
 import { categories as FAQ_CATEGORIES, faqs } from '@/data/faq';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/Tabs';
+import TabsBar from '@/components/ui/TabsBar';
 
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -33,26 +35,18 @@ export default function FAQ() {
         heightClass="h-[60vh]"
       />
 
-      {/* Category Filter */}
-      <section className="py-12 bg-surface-1 sticky top-16 z-40 border-b border-gray-200">
-        <Container>
-          <div className="flex items-center justify-center space-x-3 overflow-x-auto pb-2">
+      {/* Category Tabs (TabsBar) */}
+      <TabsBar>
+        <Tabs value={activeCategory} onChange={(v: string) => setActiveCategory(v)}>
+          <TabsList>
             {FAQ_CATEGORIES.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer ${
-                  activeCategory === category
-                    ? 'bg-primary text-white shadow-lg'
-                    : 'bg-surface-4 text-gray-700 hover:bg-surface-2 border border-gray-200'
-                }`}
-              >
+              <TabsTrigger key={category} value={category}>
                 {category}
-              </button>
+              </TabsTrigger>
             ))}
-          </div>
-        </Container>
-      </section>
+          </TabsList>
+        </Tabs>
+      </TabsBar>
 
       {/* FAQ List */}
       <section className="py-24 bg-surface-2">

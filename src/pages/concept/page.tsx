@@ -234,7 +234,7 @@ export default function Concept() {
         <section id="sanno" className="py-24 bg-surface-2 scroll-mt-24">
           <Container className="max-w-5xl">
             <div className="mb-16 text-center">
-              <h2 className="text-5xl font-bold font-serif text-gray-900 mb-6">
+              <h2 className="text-5xl font-bold font-sans text-gray-900 mb-6">
                 山王というまち
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">

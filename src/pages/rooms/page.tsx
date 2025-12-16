@@ -15,6 +15,7 @@ import LinkButton from '@/components/ui/LinkButton';
 export default function Rooms() {
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
   const [activeTab, setActiveTab] = useState<'rooms' | 'shared'>('rooms');
+  const [availabilityFilter, setAvailabilityFilter] = useState<'all' | 'available'>('all');
 
   // Sync tab with URL hash using router location
   const location = useLocation();
@@ -25,8 +26,15 @@ export default function Rooms() {
   }, [location.hash]);
 
   const rooms: Room[] = ROOM_DATA;
+  const filteredRooms: Room[] = availabilityFilter === 'available' ? rooms.filter(r => r.available) : rooms;
+  const totalRooms = rooms.length;
+  const availableRoomsCount = rooms.filter(r => r.available).length;
 
   const sharedSpaces = SHARED_SPACES;
+
+  // Group rooms by floor for Floor Plan
+  const rooms1f = rooms.filter((r) => r.floor === 1);
+  const rooms2f = rooms.filter((r) => r.floor === 2);
 
   return (
     <Layout>
@@ -64,8 +72,37 @@ export default function Rooms() {
             <Container>
             <SectionHeader title={<>個室一覧</>} subtitle={<>あなたのプライベート空間</>} />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {rooms.map((room) => (
+              {/* Counters + Availability Filter */}
+              <div className="mb-6 flex items-center justify-between gap-4 flex-wrap">
+                <div className="text-sm text-gray-700">
+                  全{totalRooms}室 ・ 空室{availableRoomsCount}室
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setAvailabilityFilter('all')}
+                    className={`px-6 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer ${
+                      availabilityFilter === 'all'
+                        ? 'bg-brand text-white shadow-md'
+                        : 'bg-surface-4 text-gray-700 hover:bg-surface-2'
+                    }`}
+                  >
+                    全て
+                  </button>
+                  <button
+                    onClick={() => setAvailabilityFilter('available')}
+                    className={`px-6 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer ${
+                      availabilityFilter === 'available'
+                        ? 'bg-brand text-white shadow-md'
+                        : 'bg-surface-4 text-gray-700 hover:bg-surface-2'
+                    }`}
+                  >
+                    空室のみ
+                  </button>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredRooms.map((room) => (
                   <div
                     key={room.id}
                     className="bg-surface-2 rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow cursor-pointer"
@@ -149,11 +186,7 @@ export default function Rooms() {
                       <span className="w-10 h-10 bg-brand text-white rounded-full flex items-center justify-center mr-3 text-lg">3F</span>
                       3階
                     </h3>
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="bg-primary/10 border-2 border-primary rounded-xl p-4 text-center">
-                        <p className="font-bold text-gray-900">Room C</p>
-                        <p className="text-sm text-gray-600">9㎡</p>
-                      </div>
+                    <div className="grid grid-cols-2 gap-4">
                       <div className="bg-primary-alt/10 border-2 border-primary-alt rounded-xl p-4 text-center">
                         <p className="font-bold text-gray-900">ワークスペース</p>
                       </div>
@@ -168,18 +201,13 @@ export default function Rooms() {
                       <span className="w-10 h-10 bg-brand text-white rounded-full flex items-center justify-center mr-3 text-lg">2F</span>
                       2階
                     </h3>
-                    <div className="grid grid-cols-4 gap-4">
-                      <div className="bg-primary/10 border-2 border-primary rounded-xl p-4 text-center">
-                        <p className="font-bold text-gray-900">Room A</p>
-                        <p className="text-sm text-gray-600">8㎡</p>
-                      </div>
-                      <div className="bg-primary/10 border-2 border-primary rounded-xl p-4 text-center">
-                        <p className="font-bold text-gray-900">Room B</p>
-                        <p className="text-sm text-gray-600">10㎡</p>
-                      </div>
-                      <div className="bg-primary-alt/10 border-2 border-primary-alt rounded-xl p-4 text-center col-span-2">
-                        <p className="font-bold text-gray-900">バスルーム・シャワー</p>
-                      </div>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                      {rooms2f.map((r) => (
+                        <div key={r.id} className="bg-primary/10 border-2 border-primary rounded-xl p-4 text-center">
+                          <p className="font-bold text-gray-900">{r.name}</p>
+                          <p className="text-sm text-gray-600">{r.size}㎡</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
@@ -188,16 +216,21 @@ export default function Rooms() {
                       <span className="w-10 h-10 bg-brand text-white rounded-full flex items-center justify-center mr-3 text-lg">1F</span>
                       1階
                     </h3>
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="bg-primary/10 border-2 border-primary rounded-xl p-4 text-center">
-                        <p className="font-bold text-gray-900">Room D</p>
-                        <p className="text-sm text-gray-600">8.5㎡</p>
-                      </div>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                      {rooms1f.map((r) => (
+                        <div key={r.id} className="bg-primary/10 border-2 border-primary rounded-xl p-4 text-center">
+                          <p className="font-bold text-gray-900">{r.name}</p>
+                          <p className="text-sm text-gray-600">{r.size}㎡</p>
+                        </div>
+                      ))}
                       <div className="bg-primary-alt/10 border-2 border-primary-alt rounded-xl p-4 text-center">
                         <p className="font-bold text-gray-900">リビング</p>
                       </div>
                       <div className="bg-primary-alt/10 border-2 border-primary-alt rounded-xl p-4 text-center">
                         <p className="font-bold text-gray-900">キッチン</p>
+                      </div>
+                      <div className="bg-primary-alt/10 border-2 border-primary-alt rounded-xl p-4 text-center col-span-1">
+                        <p className="font-bold text-gray-900">バスルーム・シャワー</p>
                       </div>
                     </div>
                   </div>
