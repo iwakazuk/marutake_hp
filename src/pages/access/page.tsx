@@ -1,0 +1,403 @@
+import Layout from '@/components/layout/Layout';
+import Hero from '@/components/feature/Hero';
+import CtaSection from '@/components/feature/CtaSection';
+import CircleIcon from '@/components/ui/CircleIcon';
+import SectionHeader from '@/components/feature/SectionHeader';
+import Container from '@/components/ui/Container';
+import { SITE } from '@/config/site';
+
+export default function Access() {
+  return (
+    <Layout>
+
+      {/* Hero Section */}
+      <Hero
+        image="https://readdy.ai/api/search-image?query=Tennoji%20station%20area%20in%20Osaka%20Japan%20at%20golden%20hour%2C%20modern%20urban%20landscape%20with%20train%20station%2C%20people%20walking%20on%20streets%2C%20vibrant%20city%20atmosphere%2C%20warm%20evening%20light%2C%20contemporary%20Japanese%20cityscape%20with%20clear%20sky&width=1920&height=1080&seq=access-hero001&orientation=landscape"
+        title={<>Access</>}
+        subtitle={<>動物園前駅から徒歩5分、新今宮駅から徒歩8分</>}
+        heightClass="h-[60vh]"
+      />
+
+      {/* Address Section */}
+      <section className="py-24 bg-surface-2">
+        <Container>
+          <div className="bg-surface-4 rounded-3xl p-12 shadow-xl border border-gray-100">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div>
+                <SectionHeader title={<>住所</>} align="left" size="md" spacing="tight" />
+                
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <CircleIcon icon="ri-map-pin-line" size="md" className="w-12 h-12 flex-shrink-0" iconClassName="text-xl" />
+                    <div>
+                      <p className="text-lg text-gray-900 font-medium mb-2">〒557-0001</p>
+                      <p className="text-lg text-gray-900 font-medium">大阪府大阪市西成区山王1-7-1</p>
+                      <p className="text-sm text-gray-500 mt-2">1-7-1 Sanno, Nishinari-ku, Osaka 557-0001, Japan</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <CircleIcon icon="ri-train-line" size="md" className="w-12 h-12 flex-shrink-0" iconClassName="text-xl" />
+                    <div>
+                      <p className="text-lg text-gray-900 font-medium mb-2">最寄り駅</p>
+                      <p className="text-gray-700">地下鉄 動物園前駅 徒歩5分</p>
+                      <p className="text-gray-700">JR・南海 新今宮駅 徒歩8分</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <CircleIcon icon="ri-phone-line" size="md" className="w-12 h-12 flex-shrink-0" iconClassName="text-xl" />
+                    <div>
+                      <p className="text-lg text-gray-900 font-medium mb-2">お問い合わせ</p>
+                      <a 
+                        href={SITE.social.line} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-accent transition-colors cursor-pointer"
+                      >
+                        LINEで気軽に相談
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl overflow-hidden shadow-xl h-96">
+                <iframe
+                  src={`https://www.google.com/maps?q=${encodeURIComponent('大阪府大阪市西成区山王1-7-1')}&hl=ja&z=16&output=embed`}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  title="MARUTAKE Location"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Route from Dobutsuen-mae */}
+      <section className="py-24 bg-surface-2">
+        <Container>
+          <SectionHeader title={<>動物園前駅からの行き方</>} subtitle={<>徒歩約5分の道のり</>} align="left" />
+
+          <div className="space-y-8">
+            <div className="bg-surface-4 rounded-3xl p-8 border border-gray-100">
+              <div className="flex items-start space-x-6">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold text-xl">1</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">動物園前駅 改札を出る</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <p className="text-gray-700 mb-4">
+                        地下鉄 動物園前駅の改札を出て、地上出口へ。御堂筋線／堺筋線の連絡改札から近い出口をご利用ください。
+                      </p>
+                    </div>
+                    <div className="rounded-2xl overflow-hidden h-48">
+                      <img
+                        src="https://readdy.ai/api/search-image?query=Tennoji%20station%20north%20exit%20in%20Osaka%20Japan%2C%20modern%20train%20station%20entrance%20with%20clear%20signage%2C%20people%20walking%2C%20daytime%20urban%20scene%2C%20contemporary%20Japanese%20architecture%2C%20clear%20directional%20signs&width=800&height=500&seq=route001&orientation=landscape"
+                        alt="動物園前駅 出口"
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-surface-4 rounded-3xl p-8 border border-gray-100">
+              <div className="flex items-start space-x-6">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold text-xl">2</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">山王方面へ直進</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <p className="text-gray-700 mb-4">
+                        駅を出たら、駅前の大通りを山王方面へ直進します。商店街を抜けて、住宅街に入っていきます。
+                      </p>
+                    </div>
+                    <div className="rounded-2xl overflow-hidden h-48">
+                      <img
+                        src="https://readdy.ai/api/search-image?query=Daido%20street%20in%20Osaka%20Japan%2C%20local%20shopping%20street%20with%20small%20shops%20and%20restaurants%2C%20pedestrians%20walking%2C%20friendly%20neighborhood%20atmosphere%2C%20daytime%20scene%2C%20traditional%20Japanese%20street&width=800&height=500&seq=route002&orientation=landscape"
+                        alt="山王方面"
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-surface-4 rounded-3xl p-8 border border-gray-100">
+              <div className="flex items-start space-x-6">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold text-xl">3</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">山王エリアに到着</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <p className="text-gray-700 mb-4">
+                        約5分ほど歩くと、山王エリアに到着します。MARUTAKEは静かな住宅街の中にあります。詳しい場所はLINEでお伝えします。
+                      </p>
+                    </div>
+                    <div className="rounded-2xl overflow-hidden h-48">
+                      <img
+                        src="https://readdy.ai/api/search-image?query=quiet%20residential%20neighborhood%20in%20Sanno%20area%20Osaka%20Japan%2C%20peaceful%20street%20with%20houses%2C%20local%20community%20atmosphere%2C%20daytime%20scene%2C%20friendly%20Japanese%20neighborhood%20with%20trees&width=800&height=500&seq=route003&orientation=landscape"
+                        alt="山王エリア"
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 bg-brand rounded-3xl p-8 text-white">
+            <div className="flex items-center space-x-4 mb-4">
+              <i className="ri-information-line text-3xl"></i>
+              <h3 className="text-2xl font-bold">初めての方へ</h3>
+            </div>
+            <p className="text-white/90 leading-relaxed">
+              見学の際は、事前にLINEでご連絡ください。駅からの詳しい道順や目印をお伝えします。迷われた場合もお気軽にご連絡ください。
+            </p>
+          </div>
+        </Container>
+      </section>
+
+          {/* Nearby Facilities */}
+      <section className="py-24 bg-surface-1">
+        <Container>
+          <div className="mb-16">
+            <h2 className="text-5xl font-bold font-serif text-gray-900 mb-4">
+              周辺施設
+            </h2>
+            <p className="text-gray-600">生活に便利な施設が徒歩圏内</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                category: 'コンビニ',
+                icon: 'ri-store-2-line',
+                color: 'bg-primary',
+                facilities: [
+                  { name: 'ファミリーマート 山王店', distance: '徒歩2分' },
+                  { name: 'セブンイレブン 山王店', distance: '徒歩3分' },
+                  { name: 'ローソン 山王店', distance: '徒歩4分' },
+                ]
+              },
+              {
+                category: 'スーパー',
+                icon: 'ri-shopping-cart-line',
+                color: 'bg-primary-alt',
+                facilities: [
+                  { name: 'ライフ', distance: '徒歩5分' },
+                  { name: '業務スーパー', distance: '徒歩6分' },
+                  { name: 'サンディ 新今宮店', distance: '徒歩7分' },
+                ]
+              },
+              {
+                category: '飲食店',
+                icon: 'ri-restaurant-line',
+                color: 'bg-primary',
+                facilities: [
+                  { name: '山王食堂', distance: '徒歩3分' },
+                  { name: 'カフェ＆ベーカリー', distance: '徒歩4分' },
+                  { name: '居酒屋 まる', distance: '徒歩5分' },
+                ]
+              },
+              {
+                category: '銭湯・温泉',
+                icon: 'ri-drop-line',
+                color: 'bg-primary',
+                facilities: [
+                  { name: 'スパ＆サウナ', distance: '徒歩3分' },
+                  { name: '山王温泉', distance: '徒歩5分' },
+                ]
+              },
+              {
+                category: '医療機関',
+                icon: 'ri-hospital-line',
+                color: 'bg-primary',
+                facilities: [
+                  { name: '山王クリニック', distance: '徒歩6分' },
+                  { name: '歯科クリニック', distance: '徒歩7分' },
+                  { name: 'ドラッグストア', distance: '徒歩4分' },
+                ]
+              },
+              {
+                category: 'その他',
+                icon: 'ri-building-line',
+                color: 'bg-primary',
+                facilities: [
+                  { name: '郵便局', distance: '徒歩5分' },
+                  { name: '銀行ATM', distance: '徒歩4分' },
+                  { name: 'コインランドリー', distance: '徒歩3分' },
+                ]
+              },
+            ].map((category, index) => (
+              <div key={index} className="bg-surface-4 rounded-3xl p-8 shadow-lg border border-gray-100">
+                <div className="flex items-center space-x-4 mb-6">
+                  <CircleIcon icon={category.icon} size="lg" className="w-14 h-14" iconClassName="text-2xl" />
+                  <h3 className="text-2xl font-bold text-gray-900">{category.category}</h3>
+                </div>
+                <div className="space-y-3">
+                  {category.facilities.map((facility, idx) => (
+                    <div key={idx} className="flex items-center justify-between py-2 border-b border-gray-100 last:border-0">
+                      <span className="text-gray-700 text-sm">{facility.name}</span>
+                      <span className="text-gray-500 text-sm font-medium">{facility.distance}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Area Photos */}
+      <section className="py-24 bg-surface-2">
+        <Container>
+          <div className="mb-16">
+            <h2 className="text-5xl font-bold font-serif text-gray-900 mb-4">
+              エリアの雰囲気
+            </h2>
+            <p className="text-gray-600">山王・天王寺エリアの魅力</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="relative rounded-3xl overflow-hidden h-96 group">
+              <img
+                src="https://readdy.ai/api/search-image?query=Tennoji%20area%20in%20Osaka%20Japan%2C%20vibrant%20urban%20district%20with%20modern%20buildings%2C%20shopping%20streets%2C%20people%20walking%2C%20lively%20atmosphere%2C%20daytime%20scene%2C%20contemporary%20Japanese%20cityscape%20with%20clear%20blue%20sky&width=800&height=600&seq=area-photo001&orientation=landscape"
+                alt="天王寺エリア"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/70"></div>
+              <div className="absolute bottom-8 left-8 right-8">
+                <h3 className="text-3xl font-bold text-white mb-3">天王寺エリア</h3>
+                <p className="text-white/90 text-sm leading-relaxed">
+                  大阪の主要ターミナル駅。あべのハルカス、天王寺動物園、商業施設が充実。梅田・難波へのアクセスも抜群です。
+                </p>
+              </div>
+            </div>
+
+            <div className="relative rounded-3xl overflow-hidden h-96 group">
+              <img
+                src="https://readdy.ai/api/search-image?query=traditional%20Japanese%20shopping%20street%20in%20Sanno%20area%20Osaka%2C%20local%20shops%20and%20restaurants%2C%20nostalgic%20downtown%20atmosphere%2C%20friendly%20neighborhood%2C%20warm%20lighting%2C%20authentic%20community%20scene%20with%20local%20people&width=800&height=600&seq=area-photo002&orientation=landscape"
+                alt="山王商店街"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/70"></div>
+              <div className="absolute bottom-8 left-8 right-8">
+                <h3 className="text-3xl font-bold text-white mb-3">山王商店街</h3>
+                <p className="text-white/90 text-sm leading-relaxed">
+                  昔ながらの下町文化が残る温かいエリア。地域の人々との交流が楽しめる、人情味あふれる商店街です。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="relative rounded-2xl overflow-hidden h-64 group">
+              <img
+                src="https://readdy.ai/api/search-image?query=cozy%20neighborhood%20cafe%20in%20Osaka%20Japan%2C%20warm%20inviting%20interior%20with%20wooden%20furniture%2C%20natural%20light%20streaming%20through%20windows%2C%20comfortable%20seating%2C%20friendly%20local%20gathering%20place%2C%20contemporary%20Japanese%20cafe%20design&width=600&height=400&seq=area-photo003&orientation=landscape"
+                alt="カフェ"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/60"></div>
+              <div className="absolute bottom-6 left-6">
+                <h4 className="text-white font-bold text-lg">近所のカフェ</h4>
+              </div>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden h-64 group">
+              <img
+                src="https://readdy.ai/api/search-image?query=traditional%20Japanese%20public%20bath%20sento%20in%20Osaka%2C%20authentic%20bathhouse%20exterior%20with%20noren%20curtain%2C%20nostalgic%20atmosphere%2C%20local%20community%20gathering%20place%2C%20evening%20scene%20with%20warm%20lighting&width=600&height=400&seq=area-photo004&orientation=landscape"
+                alt="銭湯"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/60"></div>
+              <div className="absolute bottom-6 left-6">
+                <h4 className="text-white font-bold text-lg">地域の銭湯</h4>
+              </div>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden h-64 group">
+              <img
+                src="https://readdy.ai/api/search-image?query=local%20izakaya%20restaurant%20in%20Osaka%20Japan%20at%20night%2C%20warm%20inviting%20entrance%20with%20lanterns%2C%20cozy%20atmosphere%2C%20traditional%20Japanese%20pub%2C%20friendly%20neighborhood%20gathering%20spot%2C%20evening%20scene&width=600&height=400&seq=area-photo005&orientation=landscape"
+                alt="居酒屋"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/60"></div>
+              <div className="absolute bottom-6 left-6">
+                <h4 className="text-white font-bold text-lg">近所の居酒屋</h4>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Transportation */}
+      <section className="py-24 bg-surface-1">
+        <Container>
+          <SectionHeader title={<>主要駅へのアクセス</>} subtitle={<>新今宮・動物園前から大阪各地へ</>} align="left" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { destination: '梅田', time: '約15分', line: 'JR大阪環状線' },
+              { destination: '難波', time: '約5分', line: '地下鉄御堂筋線' },
+              { destination: '心斎橋', time: '約8分', line: '地下鉄御堂筋線' },
+              { destination: '本町', time: '約10分', line: '地下鉄御堂筋線' },
+              { destination: '新大阪', time: '約20分', line: '地下鉄御堂筋線' },
+              { destination: '関西空港', time: '約40分', line: 'JR関空快速' },
+              { destination: '京都', time: '約50分', line: 'JR大和路線→京都線' },
+              { destination: '神戸', time: '約40分', line: 'JR大阪環状線→東海道線' },
+            ].map((route, index) => (
+              <div key={index} className="bg-surface-4 rounded-2xl p-6 shadow-lg border border-gray-100">
+                <div className="flex items-center space-x-3 mb-4">
+                  <CircleIcon icon="ri-train-line" size="md" className="w-10 h-10" iconClassName="text-lg" />
+                  <h3 className="text-2xl font-bold text-gray-900">{route.destination}</h3>
+                </div>
+                <p className="text-3xl font-bold text-primary mb-2">{route.time}</p>
+                <p className="text-sm text-gray-600">{route.line}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* CTA Section (common) */}
+      <CtaSection
+        title={<>見学に来ませんか？</>}
+        subtitle={<>実際に足を運んで、MARUTAKEの雰囲気を感じてください。<br />LINEで気軽にご予約いただけます。</>}
+        href={SITE.social.line}
+        buttonText={<>LINEで見学予約</>}
+        afterContent={
+          <div className="mt-12 flex items-center justify-center space-x-8 text-sm text-gray-600">
+            <div className="flex items-center space-x-2">
+              <i className="ri-time-line text-primary text-xl"></i>
+              <span>所要時間 約30分</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <i className="ri-calendar-line text-primary text-xl"></i>
+              <span>平日・週末OK</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <i className="ri-video-line text-primary text-xl"></i>
+              <span>オンライン見学も可</span>
+            </div>
+          </div>
+        }
+      />
+
+    </Layout>
+  );
+}

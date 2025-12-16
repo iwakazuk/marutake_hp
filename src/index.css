@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global color defaults */
+html, body {
+  @apply bg-surface-1 text-text-1 font-sans font-medium;
+}
+
+/* Text color unification to theme tokens */
+@layer utilities {
+  /* Neutral darks → text-text-1 with opacity approximations */
+  .text-gray-900 { @apply text-text-1; }
+  .text-gray-800 { @apply text-text-1/90; }
+  .text-gray-700 { @apply text-text-1/80; }
+  .text-gray-600 { @apply text-text-1/70; }
+  .text-gray-500 { @apply text-text-1/60; }
+  .text-gray-400 { @apply text-text-1/50; }
+  .text-black { @apply text-text-1; }
+
+  /* Neutrals on dark backgrounds → text-text-2 with matching opacity */
+  .text-white { @apply text-text-2; }
+  .text-white\/95 { @apply text-text-2/95; }
+  .text-white\/90 { @apply text-text-2/90; }
+  .text-white\/85 { @apply text-text-2/85; }
+  .text-white\/80 { @apply text-text-2/80; }
+  .text-white\/70 { @apply text-text-2/70; }
+  .text-white\/60 { @apply text-text-2/60; }
+}
